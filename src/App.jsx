@@ -91,7 +91,7 @@ const options = {
 }
 
 export const Test = () => {
-  return [...Array(30)].map((num) => {
+  return [...Array(15)].map((num) => {
     return <Chart type='monotone' data={data} options={options} key={num}/>
   });
 }
