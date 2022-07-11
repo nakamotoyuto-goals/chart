@@ -10,7 +10,7 @@ ChartJS.register(
   ...registerables
 );
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30' , '31'];
 
 export const data = {
   labels,
@@ -18,16 +18,56 @@ export const data = {
     {
       type: 'line',
       label: 'Dataset 1',
-      borderColor: 'rgb(255, 99, 132)',
+      borderColor: '#D0E2F2',
       borderWidth: 2,
       fill: false,
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    },
+    {
+      type: 'line',
+      label: 'Dataset 1.1',
+      borderColor: '#2E7ED8',
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    },
+    {
+      type: 'line',
+      label: 'Dataset 1.2',
+      borderColor: '#FC5E62',
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    },
+    {
+      type: 'line',
+      label: 'Dataset 1.3',
+      borderColor: '#E6CF57',
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    },
+    {
+      type: 'line',
+      label: 'Dataset 1.4',
+      borderColor: '#E49246',
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    },
+    {
+      type: 'line',
+      label: 'Dataset 1.5',
+      borderColor: '#3C752A',
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
     },
     {
       type: 'bar',
       label: 'Dataset 2',
       backgroundColor: 'rgb(75, 192, 192)',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       borderColor: 'white',
       borderWidth: 2,
     },
@@ -35,7 +75,7 @@ export const data = {
       type: 'bar',
       label: 'Dataset 3',
       backgroundColor: 'rgb(53, 162, 235)',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
     },
   ],
 };
@@ -52,6 +92,6 @@ const options = {
 
 export const Test = () => {
   return [...Array(30)].map((num) => {
-    return <Chart type='bar' data={data} options={options} key={num}/>
+    return <Chart type='monotone' data={data} options={options} key={num}/>
   });
 }
