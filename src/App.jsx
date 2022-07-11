@@ -98,13 +98,13 @@ export const Test = () => {
 
 const ChartComponent = () => {
   const chartRef = useRef(null);
-  const [img, setImg] = useState(false)
+  const [img, setImg] = useState('')
   useEffect(() => {
-    if (chartRef.current) {
+    if (chartRef.current && img === '') {
       // console.log(chartRef.current.toBase64Image())
       setImg(chartRef.current.toBase64Image());
     }
-  })
+  },[img])
   return (
     !img ? 
       <Chart type='monotone' data={data} options={options} ref={chartRef}/>
