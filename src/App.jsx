@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Chart as ChartJS,
   registerables
@@ -89,9 +89,26 @@ const options = {
   },
   responsiveAnimationDuration: 0 // リサイズ後のアニメーション時間
 }
-
+// myLineChart.toBase64Image()
 export const Test = () => {
   return [...Array(15)].map((num) => {
-    return <Chart type='monotone' data={data} options={options} key={num}/>
+    return <ChartComponent />
   });
+}
+
+const ChartComponent = () => {
+  const chartRef = useRef(null);
+  const [img, setImg] = useState(false)
+  useEffect(() => {
+    if (chartRef.current) {
+      // console.log(chartRef.current.toBase64Image())
+      setImg(chartRef.current.toBase64Image());
+    }
+  })
+  return (
+    !img ? 
+      <Chart type='monotone' data={data} options={options} ref={chartRef}/>
+      :
+      <img src={img}/>
+  )
 }
