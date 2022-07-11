@@ -109,6 +109,6 @@ const ChartComponent = () => {
     !img ? 
       <Chart type='monotone' data={data} options={options} ref={chartRef}/>
       :
-      <img src={img}/>
+      <img src={img} alt=""/>
   )
 }
